@@ -36,7 +36,9 @@ function Poll() {
   };
 
   const getpol = async () => {
-    const pollinfo = await axios.get(`http://localhost:5000/api/poll/${id}`);
+    const pollinfo = await axios.get(
+      `https://poll-votting-backend.onrender.com/api/poll/${id}`
+    );
     setPoll(pollinfo.data);
     console.log(
       "Hello",
@@ -65,7 +67,10 @@ function Poll() {
       });
       localStorage.setItem(localkey, [JSON.stringify(verifier)]);
       axios
-        .post("http://localhost:5000/submitresponse", response)
+        .post(
+          "https://poll-votting-backend.onrender.com/submitresponse",
+          response
+        )
         .then((res) => console.log(res))
         .catch((err) => console.log(err));
       navigate(`/poll-result/${id}`);

@@ -8,7 +8,9 @@ function AllPolls() {
   const navigate = useNavigate();
 
   const getData = async () => {
-    const res = await axios.get("http://localhost:5000/api/poll");
+    const res = await axios.get(
+      "https://poll-votting-backend.onrender.com/api/poll"
+    );
     console.log(res.data);
     // setDataChange(!dataChange);
     setData(res.data);

@@ -65,7 +65,7 @@ function PollEdit() {
     } else {
       const data = { question: questions, options: inputFields, pollid: id };
       axios
-        .put("http://localhost:5000/api/poll", data)
+        .put("https://poll-votting-backend.onrender.com/api/poll", data)
         .then((response) => {
           console.log(response);
         })
@@ -86,7 +86,9 @@ function PollEdit() {
   };
 
   const getpol = async () => {
-    const pollinfo = await axios.get(`http://localhost:5000/api/poll/${id}`);
+    const pollinfo = await axios.get(
+      `https://poll-votting-backend.onrender.com/api/poll/${id}`
+    );
     setPoll(pollinfo.data);
     setQuestion({ question: pollinfo.data.question });
     let medium = [];

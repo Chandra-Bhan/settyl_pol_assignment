@@ -100,7 +100,7 @@ function Home() {
       const data = { question: questions, options: inputFields };
       console.log(data);
       axios
-        .post("http://localhost:5000/api/poll", data)
+        .post("https://poll-votting-backend.onrender.com/api/poll", data)
         .then((response) => {
           console.log(response);
           setToast({

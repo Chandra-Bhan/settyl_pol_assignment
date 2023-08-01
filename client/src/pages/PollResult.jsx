@@ -17,7 +17,9 @@ function PollResult() {
     });
 
   const getpol = async () => {
-    const pollinfo = await axios.get(`http://localhost:5000/api/poll/${id}`);
+    const pollinfo = await axios.get(
+      `https://poll-votting-backend.onrender.com/api/poll/${id}`
+    );
     setPoll(pollinfo.data);
     console.log(
       "Hello",
@@ -36,7 +38,7 @@ function PollResult() {
     );
     const data = { id: id };
     axios
-      .post("http://localhost:5000/deletepoll", data)
+      .post("https://poll-votting-backend.onrender.com/deletepoll", data)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
     localStorage.setItem("deletepoll", 0);
