@@ -73,7 +73,7 @@ function Poll() {
         )
         .then((res) => console.log(res))
         .catch((err) => console.log(err));
-      navigate(`/poll-result/${id}`);
+      //   navigate(`/poll-result/${id}`);
     } else {
       setToast({
         snackbaropen: true,
